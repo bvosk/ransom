@@ -9,17 +9,6 @@ def decrypt(iv, message):
     cipher = AES.new(key, AES.MODE_CFB, iv)
     return cipher.decrypt(message) # Decrypt
 
-def print_file(path, data):
-    """Print a stored file to the console for debugging/demonstration"""
-    print path.strip()
-    if(data != ""):
-        print '  ' + data.strip()
-
-def print_files():
-    """Print all stored files to the console for debugging/demonstration."""
-    for f in db['files']:
-        print_file(f['path'])
-
 def get_key():
     if(len(sys.argv) < 2):
         print "\nNo argument received. Please provide the secret key to recover files\n"

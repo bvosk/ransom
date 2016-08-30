@@ -42,25 +42,6 @@ def store_file(iv, data, file_path):
                             data=encoded_data,
                             path=file_path))
 
-# Would normally remove, but leaving here for demonstration purposes
-# def print_file(path):
-#     """Print a stored file to the console for debugging/demonstration"""
-#     f = table.find_one(path=path)
-#
-#     decoded_iv = base64.decodestring(f['iv'])
-#     decoded_data = base64.decodestring(f['data'])
-#
-#     final_message = decrypt(decoded_iv, decoded_data)
-#
-#     print f['path'].strip()
-#     if(final_message != ""):
-#         print '  ' + final_message.strip()
-#
-# def print_files():
-#     """Print all stored files to the console for debugging/demonstration."""
-#     for f in db['files']:
-#         print_file(f['path'])
-
 def get_and_delete_key(key_file):
     """Retrieves the symmetric key from a file and then deletes the file."""
     try:
